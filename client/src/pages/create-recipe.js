@@ -40,7 +40,7 @@ export const CreateRecipe = () => {
     event.preventDefault();
     try {
       await axios.post(
-        "https://rec-server-backend.onrender.com/recipes",
+        "https://recipe-app-kh93.onrender.com/recipes",
         { ...recipe },
         {
           headers: { authorization: cookies.access_token },
