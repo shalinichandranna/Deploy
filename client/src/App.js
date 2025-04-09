@@ -5,6 +5,7 @@ import { Auth } from "./pages/auth";
 import { CreateRecipe } from "./pages/create-recipe";
 import { Home } from "./pages/home";
 import { SavedRecipes } from "./pages/saved-recipes";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -12,10 +13,31 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/create-recipe" element={<CreateRecipe />} />
-          <Route path="/saved-recipes" element={<SavedRecipes />} />
           <Route path="/auth" element={<Auth />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/create-recipe"
+            element={
+              <ProtectedRoute>
+                <CreateRecipe />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/saved-recipes"
+            element={
+              <ProtectedRoute>
+                <SavedRecipes />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Router>
     </div>
