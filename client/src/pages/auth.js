@@ -22,7 +22,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("https://recipe-share-8ov7.onrender.com/auth/login", {
+      const result = await axios.post("https://deploy-wub8.onrender.com/auth/login", {
         username,
         password,
       });
@@ -73,7 +73,7 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("https://recipe-share-8ov7.onrender.com/auth/register", {
+      await axios.post("https://deploy-wub8.onrender.com/auth/register", {
         username,
         email,
         password,
